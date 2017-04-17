@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" 
+    xmlns:th="http://www.thymeleaf.org" 
+    xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
+    xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>登陆</title>
+
+	<link th:href="@{/css/bootstrap.min.css}" rel="stylesheet"/>
+    <link th:href="@{/font-awesome/css/font-awesome.css}" rel="stylesheet"/>
+    <link th:href="@{/css/animate.css}" rel="stylesheet"/>
+    <link th:href="@{/css/style.css}" rel="stylesheet"/>
+
+</head>
+
+<body class="gray-bg">
+    <div class="loginColumns animated fadeInDown">
+        <div class="row">
+            <div class="col-md-6">
+                <h2 class="font-bold">欢迎来到AU+</h2>
+
+                <p>
+                    A 等于 爱 ； U 等于 你 ；+ 等于 更多......
+                </p>
+
+                <p>
+                                                 曾经沧海难为水，除却巫山不是云...
+                </p>
+
+                <p>
+                                                 直道相思了无益，未妨惆怅是清狂...
+                </p>
+
+                <p>
+                                                衣带渐宽终不悔，为伊消得人憔悴...
+                </p>
+				<p>
+                                              我们一起三生三世，看尽万里桃园...
+                </p>
+            </div>
+            <div class="col-md-6">
+                <div class="ibox-content">
+                    <form class="m-t" role="form" action="./login" method="post" th:object="${user}">
+                    	<p th:text="${errorMessage}"></p>
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="name" th:field="*{name}" required=""/>
+                        </div>
+                        <div class="form-group">
+                            <input type="password" class="form-control" placeholder="password" th:field="*{password}" required=""/>
+                        </div>
+                        <button type="submit" class="btn btn-primary block full-width m-b">登陆</button>
+
+                        <a href="#">
+                            <small>忘记密码?</small>
+                        </a>
+
+                        <p class="text-muted text-center">
+                            <small>你有一个账号?</small>
+                        </p>
+                        <a class="btn btn-sm btn-white btn-block" href="register.html">注册</a>
+                    </form>
+                    <p class="m-t">
+                        <small>Inspinia we app framework base on Bootstrap 3 &copy; 2017</small>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <hr/>
+        <div class="row">
+            <div class="col-md-6">
+                Copyright Example Company
+            </div>
+            <div class="col-md-6 text-right">
+               <small>© 2017-2055</small>
+            </div>
+        </div>
+    </div>
+     <!-- Mainly scripts -->
+    <script th:src="@{/js/jquery-2.1.1.js}"></script>
+    <script th:src="@{/js/bootstrap.min.js}"></script>
+</body>
+</html>

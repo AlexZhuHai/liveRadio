@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" 
+    xmlns:th="http://www.thymeleaf.org" 
+    xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
+    xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+<meta charset="UTF-8"/>
+<title>用户列表</title>
+</head>
+<body>
+<div>
+<table>
+	<tr>
+      <th>用户名</th>
+      <th>密码</th>
+    </tr>
+    <tr th:each="userRedis : ${users}">
+      <td th:text="${userRedis.name}">曹操</td>
+      <td th:text="${userRedis.password}">123456</td>
+    </tr>
+    </table>
+</div>
+</body>
+</html>
